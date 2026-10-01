@@ -5,31 +5,26 @@ public class Main {
 //        Create a new scanner object
         Scanner scanner = new Scanner(System.in);
 
-//        Ask for hour
-        System.out.print("Godzina: ");
-        int hour = scanner.nextInt();
-
-//        Ask for minute
-        System.out.print("Minuta: ");
-        int minute = scanner.nextInt();
-
-//        Validate input
-        if (hour <= 0 || hour >= 24 || minute < 0 || minute >= 60) {
-            System.out.println("Invalid input!");
+//        Get input until valid
+        int a = 0;
+        while (a <= 0) {
+            System.out.print("Podaj bok 1: ");
+            a = scanner.nextInt();
         }
 
-//        Return message after checking the entered values
-        if (hour == 12 ) {
-            if (minute == 0) {
-                System.out.println("Południe");
-            } else if (minute > 0) {
-                System.out.println("Godzina popołudniowa");
-            }
-        } else if (hour > 12) {
-            System.out.println("Godzina popołudniowa");
+        int b = 0;
+        while (b <= 0) {
+            System.out.print("Podaj bok 2: ");
+            b = scanner.nextInt();
+        }
+//        Calculate area
+        int area = a * b;
+
+//        Check if square, else rectangle
+        if (a == b) {
+            System.out.println("Pole kwadratu wynosi: " + area);
         } else {
-            System.out.println("Godzina przedpołudniowa");
+            System.out.println("Pole prostokąta wynosi: " + area);
         }
-
     }
 }
