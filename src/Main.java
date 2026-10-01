@@ -5,26 +5,23 @@ public class Main {
 //        Create a new scanner object
         Scanner scanner = new Scanner(System.in);
 
-//        Get input until valid
-        int a = 0;
-        while (a <= 0) {
-            System.out.print("Podaj bok 1: ");
-            a = scanner.nextInt();
-        }
+//        Get input
+        System.out.print("Wprowadź a: ");
+        int a = scanner.nextInt();
+        System.out.print("Wprowadź b: ");
+        int b = scanner.nextInt();
 
-        int b = 0;
-        while (b <= 0) {
-            System.out.print("Podaj bok 2: ");
-            b = scanner.nextInt();
-        }
-//        Calculate area
-        int area = a * b;
-
-//        Check if square, else rectangle
+//        Check if both are equal
         if (a == b) {
-            System.out.println("Pole kwadratu wynosi: " + area);
+            System.out.println("Obie liczby są równe");
+//            Check if a is greater than b
+        } else if (a > b) {
+            System.out.println(a);
+            System.out.println(b);
+//            Else so b is greater than a
         } else {
-            System.out.println("Pole prostokąta wynosi: " + area);
+            System.out.println(b);
+            System.out.println(a);
         }
     }
 }
