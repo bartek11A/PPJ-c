@@ -5,23 +5,31 @@ public class Main {
 //        Create a new scanner object
         Scanner scanner = new Scanner(System.in);
 
-//        Ask for user input and store it inside variables
-        System.out.print("Side 1: ");
-        int a = scanner.nextInt();
-        System.out.print("Side 2: ");
-        int b = scanner.nextInt();
-        System.out.print("Height: ");
-        int h = scanner.nextInt();
+//        Ask for hour
+        System.out.print("Godzina: ");
+        int hour = scanner.nextInt();
 
-//        Validate inputs
-        if (a <= 0 || b <= 0 || h <= 0) {
+//        Ask for minute
+        System.out.print("Minuta: ");
+        int minute = scanner.nextInt();
+
+//        Validate input
+        if (hour <= 0 || hour >= 24 || minute < 0 || minute >= 60) {
             System.out.println("Invalid input!");
         }
 
-//        Calculate volume
-        int volume = (a * b) * h;
-        System.out.println("Volume = " + volume);
-
+//        Return message after checking the entered values
+        if (hour == 12 ) {
+            if (minute == 0) {
+                System.out.println("Południe");
+            } else if (minute > 0) {
+                System.out.println("Godzina popołudniowa");
+            }
+        } else if (hour > 12) {
+            System.out.println("Godzina popołudniowa");
+        } else {
+            System.out.println("Godzina przedpołudniowa");
+        }
 
     }
 }
